@@ -26,25 +26,25 @@ const Contact = () => {
     }, [])
 
     return (
-        <form className="container" onSubmit={e => {
+        <form className="@container mx-auto p-5 bg-gray-100 rounded-lg" onSubmit={e => {
             e.preventDefault();
         }}>
-            <label>First Name
-                <input type="text" name="firstname" placeholder="Your name.."/>
+            <label className={"block w-full text-red-700/50"}>First Name
+                <input className={"w-full p-3 border border-gray-300 rounded-md mt-1 mb-4 box-border"} type="text" name="firstname" placeholder="Your name.."/>
             </label>
-            <label>Last Name
-                <input type="text" name="lastname" placeholder="Your last name.."/>
+            <label className={"block w-full text-red-700/50"}>Last Name
+                <input className={"w-full p-3 border border-gray-300 rounded-md mt-1 mb-4 box-border"} type="text" name="lastname" placeholder="Your last name.."/>
             </label>
-            <label>Planet
-                <select name="planet">
+            <label className={"block w-full text-red-700/50"}>Planet
+                <select name="planet" className={"w-full p-3 border border-gray-300 rounded-md mt-1 mb-4 box-border"}>
                     {planets.map(item => <option value={item} key={item}>{item}</option>)}
                 </select>
             </label>
 
-            <label>Subject
-                <textarea name="subject" placeholder="Write something.."></textarea>
+            <label className={"block w-full text-red-700/50"}>Subject
+                <textarea className={"w-full p-3 border border-gray-300 rounded-md mt-1 mb-4 resize-y h-48"} name="subject" placeholder="Write something.."></textarea>
             </label>
-            <button type="submit">Submit</button>
+            <button className={"bg-green-600 text-white py-3 px-5 rounded-md hover:bg-green-700"} type="submit">Submit</button>
         </form>
     )
 };
