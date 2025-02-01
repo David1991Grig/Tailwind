@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {base_url} from "../utils/constants.js";
+import Paragraph from "./Paragraph.jsx";
 
 
 const FarGalaxy = () => {
@@ -22,9 +23,7 @@ const FarGalaxy = () => {
     }, [])
 
     return (
-        <p className={'text-[2em] tracking-[.2em] leading-[1.5] text-justify p-[.2em]'}>
-            {openingCrawl}
-        </p>
+        <Paragraph text={openingCrawl}/>
     );
 };
 

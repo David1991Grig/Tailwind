@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {base_url, period_month} from "../utils/constants.js";
+import Paragraph from "./Paragraph.jsx";
 
 const AboutMe = () => {
     const [hero, setHero] = useState();
@@ -33,13 +34,13 @@ const AboutMe = () => {
 
     return (
         <>
-            {(!!hero) &&
-                <div className={'text-[2em] text-justify tracking-widest leading-14 ml-8'}>
-                    {Object.keys(hero).map(key => <p key={key}>
-                        <span className={'text-3xl capitalize'}>{key.replace('_', ' ')}</span>: {hero[key]}
-                    </p>)}
-                </div>
-            }
+            {hero ? (
+                Object.entries(hero).map(([key, value]) => (
+                    <Paragraph key={key} text={`${key}: ${value}`} />
+                ))
+            ) : (
+                <p>Loading...</p>
+            )}
         </>
     );
 };

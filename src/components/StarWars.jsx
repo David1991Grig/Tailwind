@@ -1,10 +1,9 @@
 import {starWarsInfo} from "../utils/constants.js";
+import Paragraph from "./Paragraph.jsx";
 
 const StarWars = () => {
     return (
-        <div className={'text-[2em] tracking-[.2em] leading-[1.5] text-justify p-[.2em]'}>
-            {starWarsInfo}
-        </div>
+        <Paragraph text={starWarsInfo}/>
     );
 };
 
